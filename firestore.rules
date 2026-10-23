@@ -1,0 +1,10 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Prototype rule for initial testing only. Anyone with the site can read/write.
+    // Before public use, enable Firebase Authentication and restrict writes to admins.
+    match /sportsDraw/{documentId} {
+      allow read, write: if true;
+    }
+  }
+}

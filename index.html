@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bốc thăm chia bảng - Giải thể thao HPDQ 2026</title>
+<script src="firebase-config.js"></script>
+<style>
+:root{--purple:#4338ca;--purple2:#3730a3;--pale:#eef2ff;--green:#059669;--bg:#f1f5f9;--line:#dbe3ef;--ink:#172554;--muted:#64748b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:13px/1.45 "Segoe UI",Arial,sans-serif}
+header{height:72px;background:var(--purple);color:#fff;box-shadow:0 2px 7px #11182730;display:flex;align-items:center;padding:0 2.3%;gap:14px}
+.brandmark{font-size:28px;font-weight:900;line-height:1}.brand h1{font-size:17px;margin:0;font-weight:800}.brand p{font-size:10px;color:#e0e7ff;margin:2px 0 0}.spacer{flex:1}
+button,select,input,textarea{font:inherit}button{cursor:pointer;border:0;border-radius:8px;padding:9px 12px;font-weight:700}.headbtn{background:#ffffff18;color:white;border:1px solid #ffffff45}.headbtn.export{background:#10b981;border-color:#10b981}.sync{font-size:10px;border:1px solid #ffffff40;border-radius:8px;padding:8px 10px;white-space:nowrap}
+main{max-width:1680px;margin:12px auto;padding:0 14px}.app{display:grid;grid-template-columns:300px minmax(0,1fr);gap:12px;align-items:start}.side,.mainpanel,.group{background:#fff;border:1px solid #dce3ec;border-radius:11px;box-shadow:0 1px 3px #0f172a0b}.side{overflow:hidden}.sidebody{padding:12px}.sectionlabel{font-size:10px;font-weight:800;color:#334155;margin:0 0 7px;text-transform:uppercase;letter-spacing:.25px}select,input{width:100%;border:1px solid #cbd5e1;background:#f8fafc;border-radius:8px;padding:9px 10px;color:#1e293b;outline-color:#818cf8}.fieldlabel{display:block;font-size:11px;color:#475569;margin:12px 0 5px}.hint{font-size:10px;color:#64748b}.quicksearch{position:relative}.quicksearch input{padding-left:30px}.quicksearch span{position:absolute;left:10px;top:9px}.split{display:grid;grid-template-columns:1fr 1fr;gap:6px}.boardpick{padding:8px 4px;background:#f8fafc;border:1px solid #dbe3ef;color:#64748b;border-radius:8px;font-weight:500}.boardpick b{display:block;font-size:12px}.boardpick small{display:block;font-size:9px;margin-top:3px}.boardpick.selected{background:#eef2ff;border-color:#a5b4fc;color:#4338ca}.boardpick.full{background:#f3f4f6;color:#94a3b8}.fullbtn{width:100%;margin-top:10px;background:var(--green);color:white}.waiting{border-top:1px solid #e2e8f0;padding:10px 12px;font-size:11px;display:flex;justify-content:space-between;color:#4338ca;font-weight:700}.waiting button{background:transparent;color:#64748b;padding:0;font-size:10px}.mainpanel{padding:12px;margin-bottom:12px}.mainhead{display:flex;align-items:center;gap:12px;justify-content:space-between;flex-wrap:wrap;padding:0 2px 12px}.mainhead h2{font-size:14px;margin:0}.mainhead h2 span{color:#4f46e5}.metric{color:#64748b;font-size:11px}.metric b{color:#4f46e5}.sporttabs{display:flex;gap:7px;margin-bottom:11px;flex-wrap:wrap}.sporttab{border:1px solid #c7d2fe;background:#fff;color:#4338ca;padding:8px 12px}.sporttab.active{background:#4338ca;color:white}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px}.group{overflow:hidden;min-width:0}.ghead{background:var(--purple);color:white;padding:8px 11px;display:flex;align-items:center;justify-content:space-between;gap:5px}.ghead strong{font-size:14px}.count{font-size:10px;background:#ffffff17;border:1px solid #ffffff30;border-radius:20px;padding:3px 7px;white-space:nowrap}.gbody{padding:8px;min-height:120px}.pair{display:flex;align-items:flex-start;gap:9px;border:1px solid #dbe4f0;border-radius:5px;background:#f8fafc;padding:8px 8px;margin-bottom:7px;line-height:1.55;min-height:35px}.pair:last-child{margin-bottom:0}.pair .n{font-weight:800;color:#4f46e5;min-width:15px}.pair .teamname{overflow-wrap:anywhere;color:#0f172a}.placeholder{color:#94a3b8;font-size:11px;padding:7px 4px}.toolbar{display:flex;gap:7px;flex-wrap:wrap}.toolbar button{padding:8px 10px}.subbtn{background:#eef2ff;color:#4338ca;border:1px solid #c7d2fe}.warn{font-size:11px;background:#fffbeb;color:#92400e;padding:9px 11px;border-radius:8px;margin-top:10px}.good{font-size:11px;background:#ecfdf5;color:#065f46;padding:9px 11px;border-radius:8px;margin-top:10px}.modalback{position:fixed;inset:0;background:#0f172a80;display:none;align-items:center;justify-content:center;padding:16px;z-index:10}.modal{background:white;border-radius:14px;padding:20px;width:min(620px,100%);max-height:90vh;overflow:auto;box-shadow:0 20px 70px #0004}.modal h2{margin:0 0 12px;font-size:17px}.modal textarea{width:100%;min-height:300px;border:1px solid #cbd5e1;border-radius:8px;padding:10px;line-height:1.7}.modalfoot{display:flex;justify-content:flex-end;gap:8px;margin-top:12px}.hidden{display:none!important}.statusline{font-size:10px;color:#64748b;margin-top:8px}
+@media(max-width:1120px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.app{grid-template-columns:270px minmax(0,1fr)}}
+@media(max-width:760px){header{height:auto;min-height:70px;padding:12px;flex-wrap:wrap}.brand h1{font-size:14px}.headbtn{padding:7px;font-size:11px}.sync{display:none}.app{grid-template-columns:1fr}.sidebody{padding:12px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ghead strong{font-size:12px}.gbody{padding:6px}.pair{font-size:11px;padding:7px 5px}.mainhead{align-items:flex-start}}
+@media(max-width:420px){.grid{grid-template-columns:1fr}.toolbar{width:100%}}
+@media print{header{background:#4338ca!important;print-color-adjust:exact}.side,.sporttabs,.toolbar,.headbtn,.sync{display:none!important}main{max-width:none;margin:0;padding:0}.app{display:block}.mainpanel{border:0;box-shadow:none}.grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}.group{break-inside:avoid}.ghead{print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<header>
+ <div class="brandmark">◆◈◆</div>
+ <div class="brand"><h1>🏆 BỐC THĂM CHIA BẢNG THI ĐẤU</h1><p>GIẢI THỂ THAO • NĂM 2026 • CÔNG TY CỔ PHẦN THÉP HÒA PHÁT DUNG QUẤT</p></div>
+ <div class="spacer"></div><button class="headbtn export" id="exportBtn">📊 Xuất Excel</button><button class="headbtn" id="settingsBtn" type="button">⚙ Cài Đặt Danh Sách Đội</button><div class="sync" id="syncStatus">● Đã lưu trên máy</div>
+</header>
+<main>
+<div class="app">
+<aside class="side">
+
+ <div class="sidebody" id="inlineSettings" style="border-bottom:1px solid #e2e8f0;background:#f8fafc">
+  <div class="sectionlabel">Cài đặt danh sách 22 đội</div>
+  <textarea id="inlineNames" style="width:100%;height:150px;resize:vertical;border:1px solid #cbd5e1;border-radius:8px;padding:8px;font:12px/1.5 'Segoe UI',Arial,sans-serif"></textarea>
+  <button type="button" id="inlineSave" class="fullbtn">💾 Lưu danh sách đội</button>
+  <div class="hint" id="inlineStatus" style="margin-top:7px">Nhập mỗi đội trên một dòng, sau đó bấm Lưu danh sách đội.</div>
+ </div>
+
+ <div class="sidebody">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><div class="sectionlabel" style="margin:0">Nội dung thi đấu</div><button type="button" class="subbtn" id="settingsBtnSide" style="padding:6px 8px;font-size:10px">⚙ Cài đặt đội</button></div>
+  <select id="sportSelect"><option value="volleyball">Bóng chuyền hơi</option><option value="tug">Kéo co</option></select>
+  <label class="fieldlabel">Tìm đội nhanh...</label><div class="quicksearch"><span>🔎</span><input id="searchTeam" placeholder="Gõ tên đội tìm nhanh..."></div>
+  <label class="fieldlabel">Chọn bảng</label><div class="split" id="boardPicker"></div>
+  <button class="fullbtn" id="assignBtn">☑ Đưa đội vào bảng</button>
+  <div class="statusline" id="sideHint">Chọn một đội trong danh sách chờ và một bảng để phân bổ thủ công.</div>
+ </div>
+ <div class="waiting"><span>👥 Danh sách đội chờ <span id="waitingCount">22</span></span><button id="toggleWaiting">Hiện ▼</button></div>
+ <div class="sidebody hidden" id="waitingPanel"><div id="waitingList"></div><div class="hint" style="margin-top:8px">Chọn một đội rồi chọn bảng để phân bổ thủ công.</div></div>
+</aside>
+<section>
+ <div class="mainpanel">
+  <div class="mainhead"><h2>NỘI DUNG THI ĐẤU: <span id="sportTitle">BÓNG CHUYỀN HƠI</span></h2><div class="metric">Đã xếp: <b id="assignedCount">0 / 22 Đội</b></div></div>
+  <div class="sporttabs"><button class="sporttab active" data-sport="volleyball">🏐 Bóng chuyền hơi</button><button class="sporttab" data-sport="tug">🪢 Kéo co</button><div class="spacer"></div><div class="toolbar"><span class="hint">Chỉ phân bổ thủ công theo kết quả bốc thăm trực tiếp</span></div></div>
+  <div class="grid" id="groupsGrid"></div>
+  <div class="good" id="resultMsg">Sẵn sàng bốc thăm. Mỗi môn có kết quả độc lập.</div>
+ </div>
+ <div class="mainpanel"><div class="mainhead"><h2>THỐNG KÊ NHANH</h2><div class="metric">Cơ cấu: 6 bảng × 3 đội, 2 bảng × 2 đội</div></div><div class="grid" style="grid-template-columns:repeat(4,minmax(0,1fr))">
+  <div><div class="sectionlabel">Tổng số đội</div><h2 id="totalTeams">22</h2></div><div><div class="sectionlabel">Bảng đã có đội</div><h2 id="boardsUsed">0/8</h2></div><div><div class="sectionlabel">Đội chưa xếp</div><h2 id="unassigned">22</h2></div><div><div class="sectionlabel">Trạng thái</div><h2 id="drawState" style="font-size:15px">Chưa bốc thăm</h2></div>
+ </div></div>
+</section>
+</div>
+</main>
+<div class="modalback" id="modalBack"><div class="modal"><h2>Cài đặt danh sách đội</h2><p class="hint">Nhập 22 đội, mỗi dòng một tên. Danh sách này dùng chung cho cả hai môn; kết quả bốc thăm từng môn vẫn độc lập.</p><textarea id="namesInput"></textarea><div class="modalfoot"><button class="subbtn" id="sampleBtn">Dùng tên mẫu</button><button class="subbtn" id="cancelSettings">Hủy</button><button class="headbtn" style="background:#4338ca" id="saveSettings">Lưu danh sách</button></div></div></div>
+<script>
+const KEY='hpdq_sports_draw_reference_ui_v1';
+const samples=Array.from({length:22},(_,i)=>`Đội ${String(i+1).padStart(2,'0')}`);
+const sportNames={volleyball:'BÓNG CHUYỀN HƠI',tug:'KÉO CO'};
+let state={teams:samples,results:{volleyball:null,tug:null},manual:{volleyball:null,tug:null},history:[]};
+let sport='volleyball',selectedBoard=0,selectedTeam=null;
+const $=id=>document.getElementById(id);
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function load(){try{const x=JSON.parse(localStorage.getItem(KEY));if(x&&Array.isArray(x.teams))state={...state,...x}}catch(e){}}
+let cloudDb=null, cloudDoc=null, cloudReady=false, cloudSaving=false;
+async function initFirebaseCloud(){
+ const cfg=window.HPDQ_FIREBASE_CONFIG;
+ if(!cfg || !cfg.apiKey || String(cfg.apiKey).includes('PASTE_')) { $('syncStatus').textContent='● Chưa cấu hình Firebase'; return; }
+ try{
+  const appMod=await import('https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js');
+  const dbMod=await import('https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js');
+  const app=appMod.initializeApp(cfg);
+  cloudDb=dbMod.getFirestore(app);
+  cloudDoc=dbMod.doc(cloudDb,'sportsDraw','hpdq2026');
+  cloudReady=true;
+  $('syncStatus').textContent='● Đang kết nối Firebase…';
+  const snap=await dbMod.getDoc(cloudDoc);
+  if(snap.exists()){
+    const remote=snap.data();
+    if(Array.isArray(remote.teams)) state={...state,...remote};
+    saveLocalOnly(); syncInlineNames(); render();
+  } else { await writeCloud(); }
+  dbMod.onSnapshot(cloudDoc, snap=>{
+    if(!snap.exists()||cloudSaving)return;
+    const remote=snap.data();
+    if(Array.isArray(remote.teams)){
+      state={...state,...remote}; saveLocalOnly(); syncInlineNames(); render();
+      $('syncStatus').textContent='● Đã đồng bộ Firebase';
+    }
+  }, err=>{$('syncStatus').textContent='● Lỗi đồng bộ Firebase';console.error(err)});
+  $('syncStatus').textContent='● Đã kết nối Firebase';
+ }catch(err){console.error(err);$('syncStatus').textContent='● Firebase lỗi cấu hình';}
+}
+function saveLocalOnly(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}}
+async function writeCloud(){
+ if(!cloudReady||!cloudDoc)return;
+ try{
+  cloudSaving=true;
+  const mod=await import('https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js');
+  await mod.setDoc(cloudDoc,{...state,updatedAt:new Date().toISOString()});
+  $('syncStatus').textContent='● Đã đồng bộ Firebase';
+ }catch(err){console.error(err);$('syncStatus').textContent='● Chưa lưu được Firebase';}
+ finally{cloudSaving=false}
+}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));if(cloudReady){writeCloud()}else{$('syncStatus').textContent='● Đã lưu trên máy'}}catch(e){$('syncStatus').textContent='● Không lưu được'}}
+function blank(){return Array.from({length:8},(_,i)=>({name:String.fromCharCode(65+i),teams:[]}))}
+function current(){return state.results[sport]||state.manual[sport]||blank()}
+function cap(i){return i<6?3:2}
+function countAssigned(groups){return groups.reduce((n,g)=>n+g.teams.length,0)}
+function render(){const gs=current(),assigned=countAssigned(gs),all=gs.reduce((a,g)=>a.concat(g.teams),[]);$('sportSelect').value=sport;$('sportTitle').textContent=sportNames[sport];document.querySelectorAll('.sporttab').forEach(b=>b.classList.toggle('active',b.dataset.sport===sport));$('assignedCount').textContent=`${assigned} / 22 Đội`;$('totalTeams').textContent=state.teams.length;$('boardsUsed').textContent=gs.filter(g=>g.teams.length).length+'/8';$('unassigned').textContent=Math.max(0,state.teams.length-assigned);$('drawState').textContent=state.results[sport]?'Đã bốc thăm':assigned?'Đang phân bổ':'Chưa bốc thăm';$('waitingCount').textContent=Math.max(0,state.teams.length-assigned);
+$('groupsGrid').innerHTML=gs.map((g,i)=>`<div class="group"><div class="ghead"><strong>BẢNG ${g.name}</strong><span class="count">${g.teams.length}/${cap(i)} Đội</span></div><div class="gbody">${g.teams.length?g.teams.map((t,j)=>`<div class="pair"><span class="n">${j+1}.</span><span class="teamname">${esc(t)}</span></div>`).join(''):'<div class="placeholder">Chưa có đội trong bảng</div>'}</div></div>`).join('');
+$('boardPicker').innerHTML=gs.map((g,i)=>`<button class="boardpick ${selectedBoard===i?'selected':''} ${g.teams.length>=cap(i)?'full':''}" data-board="${i}"><b>${g.name}</b><small>${g.teams.length}/${cap(i)} Đội</small></button>`).join('');
+document.querySelectorAll('[data-board]').forEach(b=>b.onclick=()=>{selectedBoard=+b.dataset.board;renderSide();$('boardPicker').querySelectorAll('button').forEach(x=>x.classList.toggle('selected',+x.dataset.board===selectedBoard))});
+renderSide();saveLocalOnly()}
+function renderSide(){const gs=current(),assigned=new Set(gs.flatMap(g=>g.teams));const q=$('searchTeam').value.trim().toLocaleLowerCase('vi');const waiting=state.teams.filter(t=>!assigned.has(t));$('waitingList').innerHTML=waiting.filter(t=>t.toLocaleLowerCase('vi').includes(q)).map(t=>`<button class="boardpick ${selectedTeam===t?'selected':''}" data-team="${esc(t)}" style="width:100%;text-align:left;margin:3px 0">${esc(t)}</button>`).join('')||'<div class="placeholder">Không còn đội chờ phù hợp.</div>';document.querySelectorAll('[data-team]').forEach(b=>b.onclick=()=>{selectedTeam=b.dataset.team;renderSide()});$('assignBtn').disabled=!selectedTeam||gs[selectedBoard].teams.length>=cap(selectedBoard);$('sideHint').textContent=!selectedTeam?'Chọn một đội trong danh sách chờ và một bảng.':gs[selectedBoard].teams.length>=cap(selectedBoard)?`Bảng ${gs[selectedBoard].name} đã đủ đội.`:`Đã chọn ${selectedTeam} → Bảng ${gs[selectedBoard].name}.`}
+function switchSport(s){sport=s;selectedTeam=null;selectedBoard=0;render();$('resultMsg').className=state.results[s]?'good':'warn';$('resultMsg').textContent=state.results[s]?`Đang xem kết quả đã bốc thăm: ${sportNames[s]}.`:`Chưa có kết quả cho ${sportNames[s]}.`}
+function exportExcel(){const rows=[['GIẢI THỂ THAO HPDQ 2026'],['Môn thi đấu',sportNames[sport]],['Bảng','STT','Tên đội']];current().forEach(g=>g.teams.forEach((t,i)=>rows.push([`Bảng ${g.name}`,i+1,t])));const data='\ufeff'+rows.map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(';')).join('\r\n');const blob=new Blob([data],{type:'application/vnd.ms-excel;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`Boc_tham_${sport}_${new Date().toISOString().slice(0,10)}.xls`;a.click();URL.revokeObjectURL(a.href)}
+$('sportSelect').onchange=e=>switchSport(e.target.value);document.querySelectorAll('.sporttab').forEach(b=>b.onclick=()=>switchSport(b.dataset.sport));$('drawBtn').onclick=draw;$('exportBtn').onclick=exportExcel;$('searchTeam').oninput=renderSide;$('assignBtn').onclick=()=>{if(!selectedTeam)return;let gs=current().map(g=>({name:g.name,teams:[...g.teams]}));if(gs[selectedBoard].teams.length>=cap(selectedBoard))return alert('Bảng đã đủ đội.');gs[selectedBoard].teams.push(selectedTeam);state.manual[sport]=gs;state.results[sport]=null;selectedTeam=null;save();render();$('resultMsg').className='good';$('resultMsg').textContent='Đã phân bổ đội thủ công.'};
+$('clearBtn').onclick=()=>{if(confirm('Xóa kết quả môn '+sportNames[sport]+'?')){state.results[sport]=null;state.manual[sport]=null;selectedTeam=null;render();$('resultMsg').className='warn';$('resultMsg').textContent='Đã xóa kết quả môn này.'}};
+function openSettings(){ $('namesInput').value=state.teams.join('\n'); $('modalBack').style.display='flex'; } $('settingsBtn').onclick=openSettings; $('settingsBtnSide').onclick=openSettings;$('cancelSettings').onclick=()=>$('modalBack').style.display='none';$('sampleBtn').onclick=()=>$('namesInput').value=samples.join('\n');
+$('saveSettings').onclick=()=>{const names=$('namesInput').value.split(/\r?\n/).map(x=>x.trim()).filter(Boolean);if(names.length!==22)return alert(`Cần đúng 22 đội. Hiện có ${names.length} đội.`);if(new Set(names.map(x=>x.toLocaleLowerCase('vi'))).size!==22)return alert('Tên đội đang bị trùng. Vui lòng kiểm tra lại.');if(!confirm('Lưu danh sách mới? Kết quả bốc thăm hiện tại sẽ được giữ nguyên; hãy xóa/bốc thăm lại nếu cần cập nhật.'))return;state.teams=names;save();$('modalBack').style.display='none';render()};
+$('toggleWaiting').onclick=()=>{const p=$('waitingPanel');p.classList.toggle('hidden');$('toggleWaiting').textContent=p.classList.contains('hidden')?'Hiện ▼':'Ẩn ▲'};
+
+function syncInlineNames(){ const el=$('inlineNames'); if(el) el.value=state.teams.join('\n'); }
+$('inlineSave').onclick=()=>{
+ const names=$('inlineNames').value.split(/\r?\n/).map(x=>x.trim()).filter(Boolean);
+ if(names.length!==22){$('inlineStatus').textContent=`Cần đúng 22 đội; hiện có ${names.length}.`;return;}
+ if(new Set(names.map(x=>x.toLocaleLowerCase('vi'))).size!==22){$('inlineStatus').textContent='Tên đội bị trùng. Vui lòng kiểm tra lại.';return;}
+ state.teams=names;save();render();$('inlineStatus').textContent='Đã lưu danh sách 22 đội thành công.';
+};
+load();syncInlineNames();render();if(!state.results.volleyball&&!state.results.tug)$('resultMsg').className='warn';initFirebaseCloud();
+
+</script>
+</body></html>
