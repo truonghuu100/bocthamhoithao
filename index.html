@@ -82,7 +82,7 @@ const $=id=>document.getElementById(id);
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function load(){try{const x=JSON.parse(localStorage.getItem(KEY));if(x&&Array.isArray(x.teams))state={...state,...x}}catch(e){}}
 let cloudDb=null, cloudDoc=null, cloudReady=false, cloudSaving=false;
-async async function initFirebaseCloud(){
+async function initFirebaseCloud(){
  const cfg=window.HPDQ_FIREBASE_CONFIG;
  if(!cfg || !cfg.apiKey || String(cfg.apiKey).includes('PASTE_')) { $('syncStatus').textContent='● Chưa cấu hình Firebase'; return; }
  try{
