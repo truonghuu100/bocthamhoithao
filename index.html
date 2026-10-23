@@ -61,7 +61,30 @@ main{max-width:1680px;margin:12px auto;padding:0 14px}.app{display:grid;grid-tem
 <div class="modalback" id="modalBack"><div class="modal"><h2>Cài đặt danh sách đội</h2><p class="hint">Nhập 22 đội, mỗi dòng một tên. Danh sách này dùng chung cho cả hai môn; kết quả bốc thăm từng môn vẫn độc lập.</p><textarea id="namesInput"></textarea><div class="modalfoot"><button class="subbtn" id="sampleBtn">Dùng tên mẫu</button><button class="subbtn" id="cancelSettings">Hủy</button><button class="headbtn" style="background:#4338ca" id="saveSettings">Lưu danh sách</button></div></div></div>
 <script>
 const KEY='hpdq_sports_draw_reference_ui_v1';
-const samples=Array.from({length:22},(_,i)=>`Đội ${String(i+1).padStart(2,'0')}`);
+const samples=[
+  "NM. Nguyên liệu",
+  "NM. Luyện cốc",
+  "NM. Nhiệt điện",
+  "NM. Thiêu kết - Vê viên",
+  "NM. Luyện gang 1",
+  "NM. Luyện gang 2",
+  "NM. HRC 1",
+  "NM. HRC 2",
+  "NM. Cán thép dài",
+  "NM. Cơ điện 1",
+  "NM. Cơ điện 2",
+  "NM. Cơ điện 3",
+  "NM. Cơ điện 4",
+  "NM. Cơ điện 5",
+  "NM. Cơ điện 6",
+  "P. Quản lý chất lượng",
+  "BP. Ray và Thép đặc biệt",
+  "BP. Logistics",
+  "LQ Kho - An ninh",
+  "LQ Văn phòng Dung Quất",
+  "LQ Văn phòng Hà Nội, TP.HCM",
+  "LQ Chế tạo thiết bị - Harmonia"
+];
 const sportNames={volleyball:'BÓNG CHUYỀN HƠI',tug:'KÉO CO'};
 let state={teams:samples,results:{volleyball:null,tug:null},manual:{volleyball:null,tug:null},history:[]};
 let sport='volleyball',selectedBoard=0,selectedTeam=null;
@@ -133,7 +156,9 @@ $('inlineSave').onclick=()=>{
  if(new Set(names.map(x=>x.toLocaleLowerCase('vi'))).size!==22){$('inlineStatus').textContent='Tên đội bị trùng. Vui lòng kiểm tra lại.';return;}
  state.teams=names;save();render();$('inlineStatus').textContent='Đã lưu danh sách 22 đội thành công.';
 };
-load();syncInlineNames();render();if(!state.results.volleyball&&!state.results.tug)$('resultMsg').className='warn';initFirebaseCloud();
+load();
+if(!localStorage.getItem(KEY)){state.teams=samples;saveLocalOnly();}
+syncInlineNames();render();if(!state.results.volleyball&&!state.results.tug)$('resultMsg').className='warn';initFirebaseCloud();
 
 </script>
 </body></html>
