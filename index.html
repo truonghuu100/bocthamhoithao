@@ -44,10 +44,9 @@ main{max-width:1680px;margin:12px auto;padding:0 14px}.app{display:grid;grid-tem
  <div class="sidebody">
   <div class="sectionlabel" style="margin:0 0 10px">Nội dung thi đấu</div>
   <select id="sportSelect"><option value="volleyball">Bóng chuyền hơi</option><option value="tug">Kéo co</option></select>
-  <label class="fieldlabel">Tìm đội nhanh...</label><div class="quicksearch"><span>🔎</span><input id="searchTeam" placeholder="Gõ tên đội tìm nhanh..." autocomplete="off"></div><div id="waitingList" class="team-results"></div>
+  <label class="fieldlabel">Chọn đội</label><div class="quicksearch"><span>🔎</span><input id="searchTeam" placeholder="Gõ tên đội tìm nhanh..." autocomplete="off"></div><div id="waitingList" class="team-results"></div>
   <label class="fieldlabel">Chọn bảng</label><div class="split" id="boardPicker"></div>
   <button class="fullbtn" id="assignBtn">☑ Đưa đội vào bảng</button>
-  <div class="statusline" id="sideHint">Chọn một đội trong danh sách chờ và một bảng để phân bổ thủ công.</div>
  </div>
  
 </aside>
@@ -56,7 +55,6 @@ main{max-width:1680px;margin:12px auto;padding:0 14px}.app{display:grid;grid-tem
   <div class="mainhead"><h2>NỘI DUNG THI ĐẤU: <span id="sportTitle">BÓNG CHUYỀN HƠI</span></h2><div class="metric">Đã xếp: <b id="assignedCount">0 / 22 Đội</b></div></div>
   <div class="sporttabs"><button class="sporttab active" data-sport="volleyball">🏐 Bóng chuyền hơi</button><button class="sporttab" data-sport="tug">🪢 Kéo co</button><div class="spacer"></div></div>
   <div class="grid" id="groupsGrid"></div>
-  <div class="good" id="resultMsg">Sẵn sàng bốc thăm. Mỗi môn có kết quả độc lập.</div>
  </div>
 
 </section>
