@@ -8,7 +8,7 @@
 :root{--purple:#4338ca;--purple2:#3730a3;--pale:#eef2ff;--green:#059669;--bg:#f1f5f9;--line:#dbe3ef;--ink:#172554;--muted:#64748b}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:13px/1.45 "Segoe UI",Arial,sans-serif}
 header{height:72px;background:var(--purple);color:#fff;box-shadow:0 2px 7px #11182730;display:flex;align-items:center;padding:0 2.3%;gap:14px}
-.brandmark{font-size:28px;font-weight:900;line-height:1}.brand h1{font-size:17px;margin:0;font-weight:800}.brand p{font-size:10px;color:#e0e7ff;margin:2px 0 0}.spacer{flex:1}
+.brandmark{font-size:34px;font-weight:900;line-height:1;color:#f8fafc;display:flex;align-items:center;justify-content:center;width:40px;height:40px;flex-shrink:0}.brand h1{font-size:17px;margin:0;font-weight:800}.brand p{font-size:10px;color:#e0e7ff;margin:2px 0 0}.spacer{flex:1}
 button,select,input,textarea{font:inherit}button{cursor:pointer;border:0;border-radius:8px;padding:9px 12px;font-weight:700}.headbtn{background:#ffffff18;color:white;border:1px solid #ffffff45}.headbtn.export{background:#10b981;border-color:#10b981}.sync{font-size:10px;border:1px solid #ffffff40;border-radius:8px;padding:8px 10px;white-space:nowrap}
 main{max-width:1680px;margin:12px auto;padding:0 14px}.app{display:grid;grid-template-columns:300px minmax(0,1fr);gap:12px;align-items:start}.side,.mainpanel,.group{background:#fff;border:1px solid #dce3ec;border-radius:11px;box-shadow:0 1px 3px #0f172a0b}.side{overflow:hidden}.sidebody{padding:12px}.sectionlabel{font-size:10px;font-weight:800;color:#334155;margin:0 0 7px;text-transform:uppercase;letter-spacing:.25px}select,input{width:100%;border:1px solid #cbd5e1;background:#f8fafc;border-radius:8px;padding:9px 10px;color:#1e293b;outline-color:#818cf8}.fieldlabel{display:block;font-size:11px;color:#475569;margin:12px 0 5px}.hint{font-size:10px;color:#64748b}.quicksearch{position:relative}.quicksearch input{padding-left:30px}.quicksearch span{position:absolute;left:10px;top:9px}.split{display:grid;grid-template-columns:1fr 1fr;gap:6px}.boardpick{padding:8px 4px;background:#f8fafc;border:1px solid #dbe3ef;color:#64748b;border-radius:8px;font-weight:500}.boardpick b{display:block;font-size:12px}.boardpick small{display:block;font-size:9px;margin-top:3px}.boardpick.selected{background:#eef2ff;border-color:#a5b4fc;color:#4338ca}.boardpick.full{background:#f3f4f6;color:#94a3b8}.fullbtn{width:100%;margin-top:10px;background:var(--green);color:white}.waiting{border-top:1px solid #e2e8f0;padding:10px 12px;font-size:11px;display:flex;justify-content:space-between;color:#4338ca;font-weight:700}.waiting button{background:transparent;color:#64748b;padding:0;font-size:10px}.mainpanel{padding:12px;margin-bottom:12px}.mainhead{display:flex;align-items:center;gap:12px;justify-content:space-between;flex-wrap:wrap;padding:0 2px 12px}.mainhead h2{font-size:14px;margin:0}.mainhead h2 span{color:#4f46e5}.metric{color:#64748b;font-size:11px}.metric b{color:#4f46e5}.sporttabs{display:flex;gap:7px;margin-bottom:11px;flex-wrap:wrap}.sporttab{border:1px solid #c7d2fe;background:#fff;color:#4338ca;padding:8px 12px}.sporttab.active{background:#4338ca;color:white}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px}.group{overflow:hidden;min-width:0}.ghead{background:var(--purple);color:white;padding:8px 11px;display:flex;align-items:center;justify-content:space-between;gap:5px}.ghead strong{font-size:14px}.count{font-size:10px;background:#ffffff17;border:1px solid #ffffff30;border-radius:20px;padding:3px 7px;white-space:nowrap}.gbody{padding:8px;min-height:120px}.pair{display:flex;align-items:flex-start;gap:9px;border:1px solid #dbe4f0;border-radius:5px;background:#f8fafc;padding:8px 8px;margin-bottom:7px;line-height:1.55;min-height:35px}.pair:last-child{margin-bottom:0}.pair .n{font-weight:800;color:#4f46e5;min-width:15px}.pair .teamname{overflow-wrap:anywhere;color:#0f172a}.placeholder{color:#94a3b8;font-size:11px;padding:7px 4px}.toolbar{display:flex;gap:7px;flex-wrap:wrap}.toolbar button{padding:8px 10px}.subbtn{background:#eef2ff;color:#4338ca;border:1px solid #c7d2fe}.warn{font-size:11px;background:#fffbeb;color:#92400e;padding:9px 11px;border-radius:8px;margin-top:10px}.good{font-size:11px;background:#ecfdf5;color:#065f46;padding:9px 11px;border-radius:8px;margin-top:10px}.modalback{position:fixed;inset:0;background:#0f172a80;display:none;align-items:center;justify-content:center;padding:16px;z-index:10}.modal{background:white;border-radius:14px;padding:20px;width:min(620px,100%);max-height:90vh;overflow:auto;box-shadow:0 20px 70px #0004}.modal h2{margin:0 0 12px;font-size:17px}.modal textarea{width:100%;min-height:300px;border:1px solid #cbd5e1;border-radius:8px;padding:10px;line-height:1.7}.modalfoot{display:flex;justify-content:flex-end;gap:8px;margin-top:12px}.hidden{display:none!important}.statusline{font-size:10px;color:#64748b;margin-top:8px}
 @media(max-width:1120px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.app{grid-template-columns:270px minmax(0,1fr)}}
@@ -19,20 +19,13 @@ main{max-width:1680px;margin:12px auto;padding:0 14px}.app{display:grid;grid-tem
 </head>
 <body>
 <header>
- <div class="brandmark">◆◈◆</div>
+ <div class="brandmark" aria-label="Bánh răng cơ khí" title="Bánh răng cơ khí">⚙</div>
  <div class="brand"><h1>🏆 BỐC THĂM CHIA BẢNG THI ĐẤU</h1><p>GIẢI THỂ THAO • NĂM 2026 • CÔNG TY CỔ PHẦN THÉP HÒA PHÁT DUNG QUẤT</p></div>
  <div class="spacer"></div><button class="headbtn export" id="exportBtn">📊 Xuất Excel</button><button class="headbtn" id="settingsBtn" type="button">⚙ Cài Đặt Danh Sách Đội</button><div class="sync" id="syncStatus">● Đã lưu trên máy</div>
 </header>
 <main>
 <div class="app">
 <aside class="side">
-
- <div class="sidebody" id="inlineSettings" style="border-bottom:1px solid #e2e8f0;background:#f8fafc">
-  <div class="sectionlabel">Cài đặt danh sách 22 đội</div>
-  <textarea id="inlineNames" style="width:100%;height:150px;resize:vertical;border:1px solid #cbd5e1;border-radius:8px;padding:8px;font:12px/1.5 'Segoe UI',Arial,sans-serif"></textarea>
-  <button type="button" id="inlineSave" class="fullbtn">💾 Lưu danh sách đội</button>
-  <div class="hint" id="inlineStatus" style="margin-top:7px">Nhập mỗi đội trên một dòng, sau đó bấm Lưu danh sách đội.</div>
- </div>
 
  <div class="sidebody">
   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><div class="sectionlabel" style="margin:0">Nội dung thi đấu</div><button type="button" class="subbtn" id="settingsBtnSide" style="padding:6px 8px;font-size:10px">⚙ Cài đặt đội</button></div>
@@ -149,13 +142,7 @@ function openSettings(){ $('namesInput').value=state.teams.join('\n'); $('modalB
 $('saveSettings').onclick=()=>{const names=$('namesInput').value.split(/\r?\n/).map(x=>x.trim()).filter(Boolean);if(names.length!==22)return alert(`Cần đúng 22 đội. Hiện có ${names.length} đội.`);if(new Set(names.map(x=>x.toLocaleLowerCase('vi'))).size!==22)return alert('Tên đội đang bị trùng. Vui lòng kiểm tra lại.');if(!confirm('Lưu danh sách mới? Kết quả bốc thăm hiện tại sẽ được giữ nguyên; hãy xóa/bốc thăm lại nếu cần cập nhật.'))return;state.teams=names;save();$('modalBack').style.display='none';render()};
 $('toggleWaiting').onclick=()=>{const p=$('waitingPanel');p.classList.toggle('hidden');$('toggleWaiting').textContent=p.classList.contains('hidden')?'Hiện ▼':'Ẩn ▲'};
 
-function syncInlineNames(){ const el=$('inlineNames'); if(el) el.value=state.teams.join('\n'); }
-$('inlineSave').onclick=()=>{
- const names=$('inlineNames').value.split(/\r?\n/).map(x=>x.trim()).filter(Boolean);
- if(names.length!==22){$('inlineStatus').textContent=`Cần đúng 22 đội; hiện có ${names.length}.`;return;}
- if(new Set(names.map(x=>x.toLocaleLowerCase('vi'))).size!==22){$('inlineStatus').textContent='Tên đội bị trùng. Vui lòng kiểm tra lại.';return;}
- state.teams=names;save();render();$('inlineStatus').textContent='Đã lưu danh sách 22 đội thành công.';
-};
+function syncInlineNames(){}
 load();
 if(!localStorage.getItem(KEY)){state.teams=samples;saveLocalOnly();}
 syncInlineNames();render();if(!state.results.volleyball&&!state.results.tug)$('resultMsg').className='warn';initFirebaseCloud();
