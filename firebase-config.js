@@ -1,10 +1,11 @@
-// Điền cấu hình Web App lấy từ Firebase Console > Project settings > Your apps.
-// Đây là cấu hình client Firebase; KHÔNG đặt private key / service account tại đây.
+// Firebase Web App configuration for bocthamhoithao.
+// Public client configuration; do not put service-account credentials here.
 window.HPDQ_FIREBASE_CONFIG = {
-  apiKey: "PASTE_API_KEY",
-  authDomain: "PASTE_PROJECT_ID.firebaseapp.com",
-  projectId: "PASTE_PROJECT_ID",
-  storageBucket: "PASTE_PROJECT_ID.appspot.com",
-  messagingSenderId: "PASTE_MESSAGING_SENDER_ID",
-  appId: "PASTE_APP_ID"
+  apiKey: "AIzaSyCjnje5LT-Pcmhhkq0W3c8t8Q2ytjJE_2E",
+  authDomain: "bocthamhoithao-d0194.firebaseapp.com",
+  projectId: "bocthamhoithao-d0194",
+  storageBucket: "bocthamhoithao-d0194.firebasestorage.app",
+  messagingSenderId: "1020071330924",
+  appId: "1:1020071330924:web:1a0776b001ece2c54c0449",
+  measurementId: "G-0Y0VK3VCH2"
 };
