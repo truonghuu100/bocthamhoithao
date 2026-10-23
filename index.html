@@ -45,7 +45,7 @@ main{max-width:1680px;margin:12px auto;padding:0 14px}.app{display:grid;grid-tem
   <div class="grid" id="groupsGrid"></div>
   <div class="good" id="resultMsg">Sẵn sàng bốc thăm. Mỗi môn có kết quả độc lập.</div>
  </div>
- <div class="mainpanel"><div class="mainhead"><h2>THỐNG KÊ NHANH</h2><div class="metric">Cơ cấu: 6 bảng × 3 đội, 2 bảng × 2 đội</div></div><div class="grid" style="grid-template-columns:repeat(4,minmax(0,1fr))">
+ <div class="mainpanel"><div class="mainhead"><h2>THỐNG KÊ NHANH</h2><div class="metric">Cơ cấu: 8 bảng × tối đa 3 đội</div></div><div class="grid" style="grid-template-columns:repeat(4,minmax(0,1fr))">
   <div><div class="sectionlabel">Tổng số đội</div><h2 id="totalTeams">22</h2></div><div><div class="sectionlabel">Bảng đã có đội</div><h2 id="boardsUsed">0/8</h2></div><div><div class="sectionlabel">Đội chưa xếp</div><h2 id="unassigned">22</h2></div><div><div class="sectionlabel">Trạng thái</div><h2 id="drawState" style="font-size:15px">Chưa bốc thăm</h2></div>
  </div></div>
 </section>
@@ -127,7 +127,7 @@ async function writeCloud(){
 function save(){try{localStorage.setItem(KEY,JSON.stringify(state));if(cloudReady){writeCloud()}else{$('syncStatus').textContent='● Đã lưu trên máy'}}catch(e){$('syncStatus').textContent='● Không lưu được'}}
 function blank(){return Array.from({length:8},(_,i)=>({name:String.fromCharCode(65+i),teams:[]}))}
 function current(){return state.results[sport]||state.manual[sport]||blank()}
-function cap(i){return i<6?3:2}
+function cap(i){return 3}
 function countAssigned(groups){return groups.reduce((n,g)=>n+g.teams.length,0)}
 function render(){const gs=current(),assigned=countAssigned(gs),all=gs.reduce((a,g)=>a.concat(g.teams),[]);$('sportSelect').value=sport;$('sportTitle').textContent=sportNames[sport];document.querySelectorAll('.sporttab').forEach(b=>b.classList.toggle('active',b.dataset.sport===sport));$('assignedCount').textContent=`${assigned} / 22 Đội`;$('totalTeams').textContent=state.teams.length;$('boardsUsed').textContent=gs.filter(g=>g.teams.length).length+'/8';$('unassigned').textContent=Math.max(0,state.teams.length-assigned);$('drawState').textContent=state.results[sport]?'Đã bốc thăm':assigned?'Đang phân bổ':'Chưa bốc thăm';$('waitingCount').textContent=Math.max(0,state.teams.length-assigned);
 $('groupsGrid').innerHTML=gs.map((g,i)=>`<div class="group"><div class="ghead"><strong>BẢNG ${g.name}</strong><span class="count">${g.teams.length}/${cap(i)} Đội</span></div><div class="gbody">${g.teams.length?g.teams.map((t,j)=>`<div class="pair"><span class="n">${j+1}.</span><span class="teamname">${esc(t)}</span></div>`).join(''):'<div class="placeholder">Chưa có đội trong bảng</div>'}</div></div>`).join('');
